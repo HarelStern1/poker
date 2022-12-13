@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CheckboxContainer } from "./SignInForm.styled";
 import Button from "../Button/Button";
 import { colors } from "../../utils/constants";
@@ -7,10 +7,12 @@ import Form from "../Form/Form";
 import Input from "../Input/Input";
 import Text from "../Text/Text";
 import axios from "axios";
+import signInUser from "../../utils/functions/signInUser";
 
 const SignInForm = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const navigate = useNavigate();
 
   const togglePasswordType = () => {
     if (passwordRef.current.type === "password") {
@@ -29,9 +31,13 @@ const SignInForm = () => {
     };
 
     // send user to BE
-    const { data } = await axios.post("http://localhost:5001/sign-in", user);
+    const data = await signInUser(user);
 
     localStorage.setItem("accessToken", data?.accessToken);
+
+    if (data?.accessToken) {
+      navigate("/dashboard");
+    }
   };
 
   return (

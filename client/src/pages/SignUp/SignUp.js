@@ -3,7 +3,7 @@ import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 const SignUp = () => {
   return (
-    <Section padding="10vmax 14vw" justify="center">
+    <Section padding="8vmax 14vw" justify="center">
       <div>
         <SignUpForm />
       </div>
