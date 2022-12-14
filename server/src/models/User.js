@@ -15,6 +15,10 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
     },
+    ballance: {
+      type: String,
+      default: "50000",
+    },
   },
   { minimize: false }
 );

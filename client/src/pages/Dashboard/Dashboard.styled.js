@@ -7,4 +7,5 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 15% 85%;
   background-color: ${colors.gray};
+  background-color: #202020;
 `;

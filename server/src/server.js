@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import { Server } from "socket.io";
 import routes from "./routes.js";
 import connectToDatabase from "./connection/connection.js";
+import onConnection from "./socket/onConnection.js";
 
 export const app = express();
 
@@ -18,10 +19,11 @@ export const httpServer = http.createServer(app);
 
 export const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: ["https://admin.socket.io", "http://localhost:3000"],
+    credentials: true,
   },
 });
 
 connectToDatabase();
 
-// io.on("connection", onConnection);
+io.on("connection", onConnection);

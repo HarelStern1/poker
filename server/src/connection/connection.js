@@ -1,5 +1,5 @@
 import { connect } from "mongoose";
-import { app } from "../server.js";
+import { httpServer } from "../server.js";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -10,7 +10,7 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 const connectToDatabase = async () => {
   try {
     await connect(CONNECTION_URL);
-    app.listen(PORT, () => {
+    httpServer.listen(PORT, () => {
       console.log(`Server is listening on port ${PORT}`);
     });
   } catch (err) {

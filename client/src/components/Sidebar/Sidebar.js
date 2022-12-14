@@ -23,7 +23,7 @@ const Sidebar = ({ user }) => {
       <Container>
         <div>
           <Text color={colors.white} size="16px">
-            Ballance: 121$
+            Ballance: ${user.ballance}
           </Text>
         </div>
         <div>
