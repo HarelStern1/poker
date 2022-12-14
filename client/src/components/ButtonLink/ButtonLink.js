@@ -10,6 +10,7 @@ const ButtonLink = ({
   fontSize,
   round,
   width,
+  onClick,
 }) => {
   return (
     <Link to={href}>
@@ -20,6 +21,7 @@ const ButtonLink = ({
         fontSize={fontSize}
         round={round}
         width={width}
+        onClick={onClick}
       >
         {children}
       </Button>

@@ -1,3 +1,5 @@
+import Lobby from "../../components/Lobby/Lobby";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import useAuth from "../../hooks/useAuth";
 import NotAutherized from "../NotAutherized/NotAutherized";
 import { Wrapper } from "./Dashboard.styled";
@@ -11,8 +13,8 @@ const Dashboard = () => {
 
   return (
     <Wrapper>
-      <div>hello</div>
-      <div>world</div>
+      <Sidebar user={user} />
+      <Lobby user={user} />
     </Wrapper>
   );
 };
