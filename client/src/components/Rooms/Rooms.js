@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { initialRooms } from "../../utils/constants";
 import RoomCard from "../RoomCard/RoomCard";
 import { RoomsContainer } from "./Rooms.styled";
 import { socket } from "../../socket/init";
+import { useAppContext } from "../../context/AppContext";
 
 const Rooms = () => {
-  const [rooms, setRooms] = useState(initialRooms);
+  const { rooms, setRooms } = useAppContext();
 
   useEffect(() => {
     socket.emit("get_current_rooms_data");

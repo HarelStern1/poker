@@ -5,6 +5,7 @@ export const colors = {
   green: "#35654d",
   gray: "#9f9f9f",
   yellow: "#FEBF6E",
+  brown: "#63462D",
   heroGradient: "linear-gradient(to right bottom, #161616, #1b1b1b, #35654d)",
 };
 
@@ -39,4 +40,21 @@ export const initialRooms = [
       bigBlind: 80,
     },
   },
+];
+
+export const SUITS = ["♠️", "♦️", "♣️", "♥️"];
+export const VALUES = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K",
 ];

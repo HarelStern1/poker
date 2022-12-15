@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import Layout from "./components/Layout/Layout";
 import { BrowserRouter as Router } from "react-router-dom";
+import AppProvider from "./context/AppContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router>
-    <Layout>
-      <App />
-    </Layout>
-  </Router>
+  <AppProvider>
+    <Router>
+      <Layout>
+        <App />
+      </Layout>
+    </Router>
+  </AppProvider>
 );
